@@ -18,6 +18,12 @@ snupa backend
 
 ## Architecture
 
+![image](./images/snupa_backend.PNG)
+
+***
+
+## API
+
 ***
 
 ## Conclusion
