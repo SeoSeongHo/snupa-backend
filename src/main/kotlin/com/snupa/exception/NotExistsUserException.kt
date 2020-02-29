@@ -1,4 +1,5 @@
 package com.snupa.exception
 
-class NotExistsUserException {
-}
+import java.lang.RuntimeException
+
+class NotExistsUserException (msg : String) : RuntimeException(msg)
