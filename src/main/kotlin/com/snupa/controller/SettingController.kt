@@ -11,8 +11,4 @@ import org.springframework.web.bind.annotation.*
 class SettingController (
         @Autowired private val settingService: SettingService
 ){
-    @GetMapping("/")
-    fun getSetting(@AuthenticationPrincipal user : ) {
-
-    }
 }
