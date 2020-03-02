@@ -1,4 +1,4 @@
-package com.snupa.config
+package com.snupa.config.dynamo
 
 import com.amazonaws.auth.AWSStaticCredentialsProvider
 import com.amazonaws.auth.BasicAWSCredentials
