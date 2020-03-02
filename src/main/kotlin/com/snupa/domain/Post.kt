@@ -31,11 +31,9 @@ data class Post (
         @JoinColumn(name="user_id", nullable = false)
         var user : User,
 
-        @OneToMany(fetch=FetchType.LAZY)
-        @JoinColumn(name="comment_id", nullable = false)
+        @OneToMany(fetch = FetchType.LAZY, mappedBy = "post")
         var comments : MutableList<Comment>,
 
-        @OneToMany(fetch=FetchType.LAZY)
-        @JoinColumn(name="like_id", nullable = false)
+        @OneToMany(fetch=FetchType.LAZY, mappedBy = "post")
         var likes : MutableList<Like>
 ) : EntityAuditing()
