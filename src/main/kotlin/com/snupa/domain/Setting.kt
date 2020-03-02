@@ -3,7 +3,7 @@ package com.snupa.domain
 import javax.persistence.*
 
 @Entity
-@Table(name="setting")
+@Table(name="snupa_setting")
 data class Setting (
         @Column(name="email_verified")
         var emailVerified: Boolean? = false,

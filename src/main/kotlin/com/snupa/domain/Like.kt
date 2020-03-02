@@ -3,13 +3,13 @@ package com.snupa.domain
 import javax.persistence.*
 
 @Entity
-@Table(name="Like")
+@Table(name="snupa_like")
 data class Like (
-        @OneToOne
+        @ManyToOne(fetch=FetchType.LAZY)
         @JoinColumn(name="user_id", nullable = false)
         var user : User,
 
-        @OneToOne
+        @ManyToOne(fetch=FetchType.LAZY)
         @JoinColumn(name="post_id", nullable = false)
         var post : Post
 ) : EntityAuditing()

@@ -5,7 +5,7 @@ import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
-@Table(name="post")
+@Table(name="snupa_post")
 data class Post (
         @Column(name="title", nullable = false)
         var title : String,
@@ -33,10 +33,9 @@ data class Post (
 
         @OneToMany(fetch=FetchType.LAZY)
         @JoinColumn(name="comment_id", nullable = false)
-        var comment : Comment,
+        var comments : MutableList<Comment>,
 
         @OneToMany(fetch=FetchType.LAZY)
         @JoinColumn(name="like_id", nullable = false)
-        var like : Like
-
+        var likes : MutableList<Like>
 ) : EntityAuditing()

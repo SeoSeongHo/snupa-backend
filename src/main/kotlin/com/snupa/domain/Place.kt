@@ -4,7 +4,7 @@ import com.snupa.domain.EntityAuditing
 import javax.persistence.*
 
 @Entity
-@Table(name="place")
+@Table(name="snupa_place")
 data class Place (
     @Column(name="name")
     var name : String? = null,

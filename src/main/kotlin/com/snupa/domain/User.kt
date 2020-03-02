@@ -3,6 +3,7 @@ package com.snupa.domain
 import javax.persistence.*
 
 @Entity
+@Table(name="snupa_user")
 data class User(
         @Id
         var id: Long? = null,
