@@ -28,6 +28,8 @@ dependencies {
     implementation("com.github.derjust:spring-data-dynamodb:5.1.0")
     implementation("io.jsonwebtoken:jjwt:0.9.0")
     runtimeOnly("com.h2database:h2")
+    implementation("org.springframework.boot:spring-boot-starter-jdbc")
+    implementation("mysql:mysql-connector-java")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
