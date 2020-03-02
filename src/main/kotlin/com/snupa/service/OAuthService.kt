@@ -1,7 +1,7 @@
 package com.snupa.service
 
 import com.snupa.config.security.jwt.JwtTokenProvider
-import com.snupa.domain.user.User
+import com.snupa.domain.User
 import com.snupa.dto.oauth.LoginRes
 import com.snupa.repository.UserRepository
 import com.snupa.util.KakaoAPI

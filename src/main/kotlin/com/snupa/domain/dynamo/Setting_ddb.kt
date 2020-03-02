@@ -1,4 +1,4 @@
-package com.snupa.domain
+package com.snupa.domain.dynamo
 
 import com.amazonaws.services.dynamodbv2.datamodeling.*
 import com.snupa.util.LocalDateTimeConverter

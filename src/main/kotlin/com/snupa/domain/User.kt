@@ -1,4 +1,4 @@
-package com.snupa.domain.user
+package com.snupa.domain
 
 import javax.persistence.*
 
