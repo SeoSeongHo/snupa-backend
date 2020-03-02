@@ -16,7 +16,7 @@ abstract class EntityAuditing {
 
     @CreationTimestamp
     @Column(name="created_at", nullable = false, updatable = false)
-    lateinit var createdAd : LocalDateTime
+    lateinit var createdAt : LocalDateTime
         private set
 
     @UpdateTimestamp
@@ -26,8 +26,8 @@ abstract class EntityAuditing {
 
     @PrePersist
     fun onPrePersist(){
-        this.createdAd = LocalDateTime.now()
-        this.updatedAt = this.createdAd
+        this.createdAt = LocalDateTime.now()
+        this.updatedAt = this.createdAt
     }
 
     @PreUpdate
