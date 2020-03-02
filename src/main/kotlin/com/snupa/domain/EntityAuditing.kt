@@ -11,8 +11,7 @@ import javax.persistence.*
 abstract class EntityAuditing {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    var id: Long? = null
-        private set
+    open var id: Long? = null
 
     @CreationTimestamp
     @Column(name="created_at", nullable = false, updatable = false)

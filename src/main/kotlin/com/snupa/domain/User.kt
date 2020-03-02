@@ -6,8 +6,8 @@ import javax.persistence.*
 @Table(name="snupa_user")
 data class User(
         @Id
-        var id: Long? = null,
+        override var id: Long? = null,
         var nickname: String,
         var avatar: String? = null,
         var description: String? = null
-)
+): EntityAuditing()
