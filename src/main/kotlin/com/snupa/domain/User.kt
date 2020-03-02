@@ -10,10 +10,4 @@ data class User(
         var nickname: String,
         var avatar: String? = null,
         var description: String? = null
-) {
-    constructor(): this(
-            nickname = "",
-            avatar = "",
-            description = ""
-    )
-}
+)
