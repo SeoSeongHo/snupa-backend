@@ -4,7 +4,6 @@ import com.snupa.dto.oauth.AuthPrincipal
 import com.snupa.dto.oauth.LoginReq
 import com.snupa.dto.oauth.LoginRes
 import com.snupa.service.OAuthService
-import com.snupa.util.Constants
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
