@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.*
 class UserController (
         @Autowired private val userService: UserService
 ){
-    @GetMapping("/")
+    @GetMapping()
     fun getSetting(@AuthenticationPrincipal authPrincipal: AuthPrincipal): ResponseEntity<UserRes> {
-        var user = userService.getUser(authPrincipal.userId)
+        val user = userService.getUser(authPrincipal.userId)
         return ResponseEntity.ok().body(user)
     }
 
@@ -24,7 +24,7 @@ class UserController (
     //authPrincipal.userId
     fun updateSetting(@AuthenticationPrincipal authPrincipal: AuthPrincipal, @RequestBody userReq : UserReq): ResponseEntity<UserRes> {
         userReq.id = authPrincipal.userId
-        var user = userService.updateUser(userReq)
+        val user = userService.updateUser(userReq)
         return ResponseEntity.ok().body(user)
     }
 }

@@ -15,14 +15,13 @@ class UserServiceImpl(
     override fun getUser(userId: Long): UserRes {
         val user = userRepository.findById(userId)
         if(user.isPresent)
-            throw UserIdNotFoundException("can not find user : ${userId}")
+            throw UserIdNotFoundException("can not find user : $userId")
 
         return UserMapper.toDto(user.get())
     }
 
     override fun updateUser(userReq : UserReq): UserRes {
         val user = userRepository.save(UserMapper.toEntity(userReq))
-
         return UserMapper.toDto(user)
     }
 }
