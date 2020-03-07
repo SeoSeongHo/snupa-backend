@@ -1,4 +1,4 @@
-package com.snupa.service
+package com.snupa.service.post
 
 import com.snupa.domain.Post
 import com.snupa.dto.oauth.AuthPrincipal
@@ -7,7 +7,7 @@ import com.snupa.dto.post.SearchType
 import org.springframework.web.multipart.MultipartFile
 
 interface PostService {
-    fun getPosts(recent: Boolean, popular: Boolean, type: SearchType): List<Post>
+    fun getPosts(recent: Boolean, popular: Boolean, type: SearchType, authPrincipal: AuthPrincipal): List<Post>
     fun getPost(postId: Long): Post
     fun createPost(files: List<MultipartFile>?, postReq: PostReq, authPrincipal: AuthPrincipal): Post
     fun updatePost(files: List<MultipartFile>?, postId: Long, postReq: PostReq, authPrincipal: AuthPrincipal): Post
