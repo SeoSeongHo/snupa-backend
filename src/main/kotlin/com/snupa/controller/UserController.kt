@@ -1,5 +1,6 @@
 package com.snupa.controller
 
+import com.snupa.domain.User
 import com.snupa.dto.oauth.AuthPrincipal
 import com.snupa.dto.user.UserReq
 import com.snupa.dto.user.UserRes
@@ -15,7 +16,7 @@ class UserController (
         @Autowired private val userService: UserService
 ){
     @GetMapping()
-    fun getSetting(@AuthenticationPrincipal authPrincipal: AuthPrincipal): ResponseEntity<UserRes> {
+    fun getSetting(@AuthenticationPrincipal authPrincipal: AuthPrincipal): ResponseEntity<User> {
         val user = userService.getUser(authPrincipal.userId)
         return ResponseEntity.ok().body(user)
     }

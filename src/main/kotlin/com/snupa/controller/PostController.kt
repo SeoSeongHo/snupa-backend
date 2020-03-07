@@ -4,7 +4,7 @@ import com.snupa.domain.Post
 import com.snupa.dto.oauth.AuthPrincipal
 import com.snupa.dto.post.PostReq
 import com.snupa.dto.post.SearchType
-import com.snupa.service.PostService
+import com.snupa.service.post.PostService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -22,9 +22,10 @@ class PostController(
     fun getPosts(
             @RequestParam("recent") recent: Boolean,
             @RequestParam("popular") popular: Boolean,
-            @RequestParam("type") type: SearchType
+            @RequestParam("type") type: SearchType,
+            @AuthenticationPrincipal authPrincipal: AuthPrincipal
     ): ResponseEntity<List<Post>> {
-        val posts = postService.getPosts(recent, popular, type)
+        val posts = postService.getPosts(recent, popular, type, authPrincipal)
         return ResponseEntity(posts, HttpStatus.OK)
     }
 
