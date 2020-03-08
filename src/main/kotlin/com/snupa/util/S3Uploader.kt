@@ -1,6 +1,6 @@
 package com.snupa.util
 
-import com.amazonaws.services.s3.AmazonS3Client
+import com.amazonaws.services.s3.AmazonS3
 import com.amazonaws.services.s3.model.CannedAccessControlList
 import com.amazonaws.services.s3.model.PutObjectRequest
 import org.springframework.beans.factory.annotation.Autowired
@@ -16,10 +16,10 @@ import java.util.*
 @Component
 class S3Uploader(
         @Autowired
-        private val amazonS3Client: AmazonS3Client,
-        @Value("\${cloud.aws.s3.bucket}")
+        private val amazonS3Client: AmazonS3,
+        @Value("\${cloud.aws.s3.bucket:snupa}")
         private val bucket: String,
-        @Value("\${cloud.aws.s3.dir}")
+        @Value("\${cloud.aws.s3.dir:images}")
         private val dirName: String
 ) {
     @Throws(IOException::class)
